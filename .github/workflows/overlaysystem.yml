@@ -41,8 +41,8 @@ jobs:
        - name: System.img
          run: |
               sudo mkdir lel
-              sudo mount -ro loop system.img lel/
-              sudo zip -r op7tprosystem.zip lel/product
+              sudo mount -ro loop product.img lel/
+              sudo zip -r op7tprosystem.zip lel/overlay
               
        - name: upload aonly n infog
          run: |
