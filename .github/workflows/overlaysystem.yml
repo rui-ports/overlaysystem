@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  SYSTEM_URL: http://tdrive.manofuranium.workers.dev/oppppp7tproovendorrr.zip
+  SYSTEM_URL: http://tdrive.manofuranium.workers.dev/oppppp7tproosystem.zip
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -42,8 +42,7 @@ jobs:
          run: |
               sudo mkdir lel
               sudo mount -ro loop system.img lel/
-              sudo cp -r lel/overlay ../../
-              sudo zip op7tprosystem.zip overlay
+              sudo zip op7tprosystem.zip lel/system/system/product/overlay
  
               
        - name: upload aonly n infog
