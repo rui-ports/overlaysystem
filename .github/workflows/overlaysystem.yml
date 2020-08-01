@@ -42,7 +42,10 @@ jobs:
          run: |
               sudo mkdir lel
               sudo mount -ro loop system.img lel/
-              sudo zip -r op7tprosystem.zip lel/system/product/overlay
+              cd lel/system
+              cd system/product
+              cd ..
+              sudo zip -r op7tprosystem.zip product
               
        - name: upload aonly n infog
          run: |
