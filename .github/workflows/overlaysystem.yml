@@ -40,7 +40,7 @@ jobs:
        - name: System.img
          run: |
               sudo mkdir lel
-              sudo mount -ro loop product.img lel/
+              sudo mount -ro loop opproduct.img lel/
               sudo zip -r op7tprooneplus.zip lel
               
        - name: upload aonly n infog
