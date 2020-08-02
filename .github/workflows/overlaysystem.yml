@@ -35,7 +35,7 @@ jobs:
 
        - name: System.img
          run: |
-              sudo aria2c https://tdrive.manofuranium.workers.dev/op7tproh2os/opproduct.img
+              sudo aria2c https://tdrive.manofuranium.workers.dev/systemnew/system_ext.img
         
        - name: System.img
          run: |
