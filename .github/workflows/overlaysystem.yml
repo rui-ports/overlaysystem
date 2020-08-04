@@ -32,10 +32,12 @@ jobs:
             sudo apt-get install -y brotli
             sudo apt-get install unzip
             sudo apt-get install zip gzip tar
+            sudo -E apt-get install expect
+            sudo apt update 2>/dev/null | grep packages
 
        - name: System.img
          run: |
-              sudo aria2c https://tdrive.manofuranium.workers.dev/systemnew/system_ext.img
+              sudo aria2c https://tdrive.manofuranium.workers.dev/systemnew/system.img
         
        - name: System.img
          run: |
