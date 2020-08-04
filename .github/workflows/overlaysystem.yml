@@ -37,13 +37,14 @@ jobs:
 
        - name: System.img
          run: |
-              sudo aria2c https://tdrive.manofuranium.workers.dev/op7payload/system.img
+              sudo aria2c https://master.dl.sourceforge.net/project/rui-ports//dumps/OxygenOS-AB-10-20200804-ruigsi.img
         
        - name: System.img
          run: |
               sudo mkdir lel
-              sudo mount -ro loop system.img lel/
-              sudo zip -r op7systemapexframework.zip lel/system/apex lel/system/framework
+              sudo mount -ro loop *AB*.img lel/
+              ls lel
+              sudo zip -r op7systemapexframework2.zip lel/system/apex lel/system/framework
               
        - name: Uploading 
          run: |
@@ -56,7 +57,7 @@ jobs:
               expect \"sftp> \"
               send \"cd /home/pfs/project/rui-ports/dumps\r\"
               set timeout -1
-              send \"put op7systemapexframework.zip\r\"
+              send \"put op7systemapexframework2.zip\r\"
               expect \"Uploading\"
               expect \"100%\"
               expect \"sftp>\"
