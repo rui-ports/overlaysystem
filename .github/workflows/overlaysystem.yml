@@ -32,22 +32,17 @@ jobs:
             sudo apt-get install -y brotli
             sudo apt-get install unzip
             sudo apt-get install zip gzip tar
-            sudo -E apt-get install expect
-            sudo apt update 2>/dev/null | grep packages
-
        - name: System.img
          run: |
-              sudo aria2c $SYSTEM_URL
+              sudo aria2c https://tdrive.manofuranium.workers.dev/op7tproh2os/product.img
         
        - name: System.img
          run: |
               sudo mkdir lel
-              sudo mount -ro loop system.img lel/
-              ls lel
-              sudo zip -r op8prosystemoverlay.zip lel/overlay
+              sudo mount -ro loop product.img lel/
+              sudo zip -r op8prosystem.zip lel/overlay
               
        - name: upload aonly n infog
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer gof op8prosystemoverlay.zip
- 
+              ./transfer gof op8prosystem.zip
