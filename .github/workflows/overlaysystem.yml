@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  SYSTEM_URL: http://tdrive.manofuranium.workers.dev/op8prooooo/product.img
+  SYSTEM_URL: http://tdrive.manofuranium.workers.dev/op7tproooohehe/product.img
 jobs:
   build:
     runs-on: ubuntu-latest
