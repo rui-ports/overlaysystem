@@ -37,35 +37,17 @@ jobs:
 
        - name: System.img
          run: |
-              sudo aria2c https://master.dl.sourceforge.net/project/rui-ports//dumps/OxygenOS-AB-10-20200804-ruigsi.img
+              sudo aria2c $SYSTEM_URL
         
        - name: System.img
          run: |
               sudo mkdir lel
-              sudo mount -ro loop *AB*.img lel/
+              sudo mount -ro loop system.img lel/
               ls lel
-              sudo zip -r op7systemapexframework2.zip lel/system/apex lel/system/framework
-              
-       - name: Uploading 
-         run: |
-              expect -c "
-              spawn sftp ruiii@frs.sourceforge.net
-              expect \"yes/no\"
-              send \"yes\r\"
-              expect \"Password\"
-              send \"${{ secrets.PASSWORD }}\r\"
-              expect \"sftp> \"
-              send \"cd /home/pfs/project/rui-ports/dumps\r\"
-              set timeout -1
-              send \"put op7systemapexframework2.zip\r\"
-              expect \"Uploading\"
-              expect \"100%\"
-              expect \"sftp>\"
-              send \"bye\r\"
-              interact"
+              sudo zip -r op8prosystemoverlay.zip lel/overlay
               
        - name: upload aonly n infog
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer bit op7tprooneplus.zip
+              ./transfer gof op8prosystemoverlay.zip
  
