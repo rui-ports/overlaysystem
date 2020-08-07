@@ -34,7 +34,7 @@ jobs:
             sudo apt-get install zip gzip tar
        - name: System.img
          run: |
-              sudo aria2c https://tdrive.manofuranium.workers.dev/op7tproh2os/product.img
+              sudo aria2c $SYSTEM_URL
         
        - name: System.img
          run: |
