@@ -42,7 +42,7 @@ jobs:
               sudo mount -ro loop product.img lel/
               sudo zip -r op8prosystem.zip lel/overlay
               
-       - name: upload aonly n infog
+       - name: upload aonly n info
          run: |
               curl -sL https://git.io/file-transfer | sh
               ./transfer gof op8prosystem.zip
