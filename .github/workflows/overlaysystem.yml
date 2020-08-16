@@ -32,6 +32,9 @@ jobs:
             sudo apt-get install -y brotli
             sudo apt-get install unzip
             sudo apt-get install zip gzip tar
+            sudo -E apt-get install expect
+            sudo apt update 2>/dev/null | grep packages
+            
        - name: System.img
          run: |
               sudo aria2c $SYSTEM_URL
