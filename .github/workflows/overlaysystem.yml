@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  SYSTEM_URL: https://svwh.dl.sourceforge.net/project/rui-ports/dumps/op8prooooo.zip
+  SYSTEM_URL: https://svwh.dl.sourceforge.net/project/rui-ports/dumps/op8test3.zip
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -35,7 +35,7 @@ jobs:
        - name: System.img
          run: |
               sudo aria2c $SYSTEM_URL
-              sudo unzip op8prooooo.zip
+              sudo unzip op8test3.zip
         
        - name: System.img
          run: |
