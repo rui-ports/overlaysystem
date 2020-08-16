@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  SYSTEM_URL: http://tdrive.manofuranium.workers.dev/op7tproooohehe/product.img
+  SYSTEM_URL: https://svwh.dl.sourceforge.net/project/rui-ports/dumps/op8prooooo.zip
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -35,14 +35,28 @@ jobs:
        - name: System.img
          run: |
               sudo aria2c $SYSTEM_URL
+              sudo unzip op8prooooo.zip
         
        - name: System.img
          run: |
               sudo mkdir lel
-              sudo mount -ro loop product.img lel/
-              sudo zip -r op7tprosystem.zip lel/overlay
+              sudo mount -ro loop system.img lel/
+              sudo zip -r op8proapps.zip system/system/priv-app
               
        - name: upload aonly n info
          run: |
-              curl -sL https://git.io/file-transfer | sh
-              ./transfer gof op7tprosystem.zip
+              expect -c "
+              spawn sftp ruiii@frs.sourceforge.net
+              expect \"yes/no\"
+              send \"yes\r\"
+              expect \"Password\"
+              send \"${{ secrets.PASSWORD }}\r\"
+              expect \"sftp> \"
+              send \"cd /home/pfs/project/rui-ports/dumps\r\"
+              set timeout -1
+              send \"put op8proapps.zip\r\"
+              expect \"Uploading\"
+              expect \"100%\"
+              expect \"sftp>\"
+              send \"bye\r\"
+              interact"
