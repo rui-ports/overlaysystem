@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  SYSTEM_URL: https://svwh.dl.sourceforge.net/project/rui-ports/dumps/op8test3.zip
+  SYSTEM_URL: http://tdrive.manofuranium.workers.dev/op8test3.zip
 jobs:
   build:
     runs-on: ubuntu-latest
